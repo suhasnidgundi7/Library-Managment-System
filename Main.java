@@ -26,13 +26,19 @@ public class Main {
                     System.out.println("\n\t!!! ERROR !!! Password Isn't Match !!!\n");
                 }
             }
+            login(this.username, this.password);
         }
+        
         username = username.trim();
         password = password.trim();
         confirm_password = confirm_password.trim();
     }
 
     protected void login(String username, String password) {
+
+        // System.out.println("\nI am in Login Function");
+        // System.out.println(username);
+        // System.out.println(password);
 
         String InputUsername;
         String InputPassword;
@@ -61,23 +67,6 @@ public class Main {
 
     public static void main(String[] args) {
         Main mn = new Main();
-        // int choice;
-        // try (Scanner sc = new Scanner(System.in)) {
-        // System.out.print("\tEnter Your Choice => ");
-        // choice = sc.nextInt();
-        // }
-        // switch (choice) {
-        // case 1:
-        // mn.register();
-        // break;
-        // case 2:
-        // mn.login();
-        // break;
-        // default:
-        // System.out.println("!!! ERROR !!! Invaild Input !!!");
-        // break;
-        // }
-        // mn.register();
-        mn.login("suhasnidgundi", "root");
-    }
+        mn.register();
+        }
 }
