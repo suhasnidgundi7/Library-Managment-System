@@ -26,9 +26,28 @@ public class Main {
                     System.out.println("\n\t!!! ERROR !!! Password Isn't Match !!!\n");
                 }
             }
-            login(this.username, this.password);
+
+            int choice;
+            boolean WrongInput = true;
+            try (Scanner input = new Scanner(System.in)){
+                while (WrongInput) {
+                    System.out.print("\n\tEnter Your Choice => ");
+                    choice = input.nextInt();
+                    System.out.print("\n");
+
+                    if (choice==1) {
+                        login(this.username, this.password);
+                        WrongInput = false;
+                    } else {
+                        System.out.println("\n!!! Check Your Choice\n");
+                    }
+                }
+            } catch (Exception e) {
+                System.out.print(e);
+            }
+
         }
-        
+
         username = username.trim();
         password = password.trim();
         confirm_password = confirm_password.trim();
@@ -68,5 +87,5 @@ public class Main {
     public static void main(String[] args) {
         Main mn = new Main();
         mn.register();
-        }
+    }
 }
